@@ -38,7 +38,7 @@ module.exports = {
       output: 'robots.txt'
     },
     {
-      input: '.gitignore',
+      input: '_gitignore',
       output: '.gitignore'
     }
   ],
