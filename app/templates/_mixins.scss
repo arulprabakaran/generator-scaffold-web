@@ -1,0 +1,81 @@
+// Smooth transitions
+
+@mixin transition ($property: all, $duration: 0.3s, $function: ease, $delay: 0s) {
+    -webkit-transition: $property $duration $function $delay;
+    transition: $property $duration $function $delay;
+}
+
+/*
+  This mixin can be used to set the object-fit:
+  @include object-fit(contain);
+  or object-fit and object-position:
+  @include object-fit(cover, top);
+*/
+@mixin object-fit($fit: fill, $position: null) {
+	-o-object-fit: $fit;
+	object-fit: $fit;
+
+	@if $position {
+		-o-object-position: $position;
+		object-position: $position;
+		font-family: 'object-fit: #{$fit}; object-position: #{$position}';
+	}
+	@else {
+		font-family: 'object-fit: #{$fit}';
+	}
+}
+
+// Hidden Image
+
+@mixin hidden-image {
+    width: 0;
+    height: 0;
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    border: none;
+}
+
+// Gradient from top
+
+@mixin linear-gradient ($color-top, $color-bottom) {
+    background: $color-top;
+    background: -moz-linear-gradient(top, $color-top 0%, $color-bottom 100%);
+    background: -webkit-linear-gradient(top, $color-top 0%,$color-bottom 100%);
+    background: linear-gradient(to bottom, $color-top 0%,$color-bottom 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color-top', endColorstr='$color-bottom',GradientType=0 );
+}
+
+// Breakpoints
+
+@mixin bp-sm {
+
+    @media screen and (min-width: 576px) {
+        @content;
+    }
+
+}
+
+@mixin bp-md {
+
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+
+}
+
+@mixin bp-lg {
+
+    @media screen and (min-width: 992px) {
+        @content;
+    }
+
+}
+
+@mixin bp-xlg {
+
+    @media screen and (min-width: 1200px) {
+        @content;
+    }
+
+}

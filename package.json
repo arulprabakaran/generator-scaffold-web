@@ -1,0 +1,32 @@
+{
+  "name": "generator-scaffold-web",
+  "version": "0.0.1",
+  "description": "A simple website startup generator",
+  "private": false,
+  "main": "app/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "arulprabakaran/generator-scaffold-web",
+  "keywords": [
+    "yeoman-generator",
+    "scaffold",
+    "front-end",
+    "node"
+  ],
+  "author": {
+    "name": "Arul Prabakaran",
+    "email": "arul.prabakaran@gmail.com",
+    "url": "https://github.com/arulprabakaran"
+  },
+  "dependencies": {
+    "mkdirp": "~0.5.1",
+    "underscore.string": "^3.3.5",
+    "yeoman-generator": "~0.21.1"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arulprabakaran/generator-scaffold-web/issues"
+  },
+  "homepage": "https://github.com/arulprabakaran/generator-scaffold-web#readme"
+}

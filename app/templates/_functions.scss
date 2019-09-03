@@ -1,0 +1,20 @@
+// PX to EM conversion
+
+@function em($pixels, $context: $default-font-size) {
+    @return #{$pixels/$context}em;
+}
+
+/*PX to Rem conversion*/
+$baseFontSize: $default-font-size;
+
+@function rem($pixels, $context: $baseFontSize) {
+	@if (unitless($pixels)) {
+		$pixels: $pixels * 1px;
+	}
+
+	@if (unitless($context)) {
+		$context: $context * 1px;
+	}
+
+	@return $pixels / $context * 1rem;
+}
