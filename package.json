@@ -1,5 +1,5 @@
 {
-  "name": "generator-scaffold-web",
+  "name": "generator-scaffold-website",
   "version": "0.0.1",
   "description": "A simple website startup generator",
   "private": false,
@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": "arulprabakaran/generator-scaffold-web",
+  "repository": "arulprabakaran/generator-scaffold-website",
   "keywords": [
     "yeoman-generator",
     "scaffold",
@@ -26,7 +26,7 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/arulprabakaran/generator-scaffold-web/issues"
+    "url": "https://github.com/arulprabakaran/generator-scaffold-website/issues"
   },
-  "homepage": "https://github.com/arulprabakaran/generator-scaffold-web#readme"
+  "homepage": "https://github.com/arulprabakaran/generator-scaffold-website#readme"
 }
