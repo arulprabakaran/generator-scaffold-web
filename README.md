@@ -1,1 +1,1 @@
-generator-scaffold-web
+generator-scaffold-website
