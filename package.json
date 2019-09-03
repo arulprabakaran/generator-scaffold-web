@@ -1,6 +1,6 @@
 {
   "name": "generator-scaffold-website",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A simple website startup generator",
   "private": false,
   "main": "app/index.js",
