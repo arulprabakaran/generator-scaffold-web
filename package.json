@@ -20,9 +20,9 @@
     "url": "https://github.com/arulprabakaran"
   },
   "dependencies": {
-    "mkdirp": "~0.5.1",
+    "mkdirp": "^0.5.1",
     "underscore.string": "^3.3.5",
-    "yeoman-generator": "~0.21.1"
+    "yeoman-generator": "^4.0.2"
   },
   "license": "MIT",
   "bugs": {
