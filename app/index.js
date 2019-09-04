@@ -1,14 +1,13 @@
 'use strict';
 
 const s = require('underscore.string'),
-  generators = require('yeoman-generator'),
+  Generators = require('yeoman-generator'),
   config = require('./config'),
   mkdirp = require('mkdirp');
 
-module.exports = generators.Base.extend({
+module.exports = class extends Generators{
 
-  getPrompts: function () {
-    var done = this.async();
+  async getPrompts() {
 
     var prompts = [{
       name: 'appName',
@@ -19,22 +18,19 @@ module.exports = generators.Base.extend({
       message: 'What is your company/author name?'
     }];
 
-    this.prompt(prompts, function(props) {
-      this.appName = props.appName;
-      this.appAuthor = props.appAuthor;
+    this.answers = await this.prompt(prompts);
 
-      this.slugifiedAppName = s(this.appName).slugify().value();
-      this.humanizedAppName = s(this.appName).humanize().value();
-      this.capitalizedAppAuthor = s(this.appAuthor).capitalize().value();
+    this.slugifiedAppName = s(this.answers.appName).slugify().value();
+    this.humanizedAppName = s(this.answers.appName).humanize().value();
+    this.capitalizedAppAuthor = s(this.answers.appAuthor).capitalize().value();
 
-      done();
-    }.bind(this));
-  },
+  }
 
-  writingFiles: function () {
-    var templateData = {
-      appName: this.appName,
-      appAuthor: this.appAuthor,
+  writingFiles() {
+
+    const templateData = {
+      appName: this.answers.appName,
+      appAuthor: this.answers.appAuthor,
       slugifiedAppName: this.slugifiedAppName,
       humanizedAppName: this.humanizedAppName,
       capitalizedAppAuthor: this.capitalizedAppAuthor
@@ -67,10 +63,10 @@ module.exports = generators.Base.extend({
       mkdirp(item);
     });
 
-  },
+  }
 
-  install: function() {
+  install() {
     this.npmInstall();
   }
 
-});
+}
