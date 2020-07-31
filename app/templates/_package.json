@@ -10,10 +10,12 @@
     "gulp-cli": "^2.2.0",
     "gulp-postcss": "^8.0.0",
     "gulp-sass": "^4.0.2",
-    "gulp-sourcemaps": "^2.6.5"
+    "gulp-sourcemaps": "^2.6.5",
+    "lite-server": "^2.5.4"
   },
   "scripts": {
-    "postinstall": "gulp"
+    "postinstall": "gulp",
+    "dev": "lite-server"
   },
   "browserslist": [
     "> 1%",
