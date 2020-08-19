@@ -19,4 +19,8 @@ gulp.task('styles', function () {
     .pipe(gulp.dest('assets/css'));
 });
 
+gulp.task('sass:watch', function () {
+    gulp.watch('assets/scss/*.scss', gulp.parallel('styles'));
+});
+
 gulp.task('default', gulp.parallel('styles'));
