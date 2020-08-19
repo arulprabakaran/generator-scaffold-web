@@ -6,6 +6,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^9.5.1",
+    "concurrently": "^5.2.0",
     "gulp": "^4.0.2",
     "gulp-cli": "^2.2.0",
     "gulp-postcss": "^8.0.0",
@@ -15,7 +16,10 @@
   },
   "scripts": {
     "postinstall": "gulp",
-    "dev": "lite-server"
+    "dev": "concurrently \"npm:build\" \"npm:sass:watch\" \"npm:serve\"",
+    "sass:watch": "gulp sass:watch",
+    "serve": "lite-server",
+    "build": "gulp styles"
   },
   "browserslist": [
     "> 1%",
