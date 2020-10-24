@@ -5,7 +5,7 @@ const autoprefixer = require('autoprefixer');
 const postcss = require('gulp-postcss');
 
 gulp.task('styles', function () {
-  return gulp.src('assets/scss/*.scss')
+  return gulp.src('assets/scss/**/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass.sync({
       outputStyle: 'expanded',
@@ -20,7 +20,7 @@ gulp.task('styles', function () {
 });
 
 gulp.task('sass:watch', function () {
-    gulp.watch('assets/scss/*.scss', gulp.parallel('styles'));
+    gulp.watch('assets/scss/**/*.scss', gulp.parallel('styles'));
 });
 
 gulp.task('default', gulp.parallel('styles'));
